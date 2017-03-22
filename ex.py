@@ -6,11 +6,11 @@ import json
 
 
 def toJson(otput,error,s):
-    dick = {}
-    dick['out'] = otput
-    dick['error'] = error
-    dick['status'] = s
-    return json.dumps(dick)
+    dct = {}
+    dct['out'] = otput
+    dct['error'] = error
+    dct['status'] = s
+    return json.dumps(dct)
 
 app = Flask(__name__)
 app.config["CACHE_TYPE"] = "null"
