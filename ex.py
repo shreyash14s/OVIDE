@@ -7,9 +7,10 @@ import json
 
 def toJson(otput,error,s):
     dct = {}
-    dct['out'] = otput
-    dct['error'] = error
+    dct['out'] = otput.decode("utf-8")
+    dct['error'] = error.decode("utf-8")
     dct['status'] = s
+    print(dct)
     return json.dumps(dct)
 
 app = Flask(__name__)

@@ -47,7 +47,7 @@
 })(jQuery);
 
 function receivedText() {
-    document.getElementById('text').value = document.createTextNode(fr.result).nodeValue;
+    document.getElementById('text').value = fr.result;
   } 
 
 $(function() {
@@ -85,7 +85,7 @@ $(function() {
 				      fr = new FileReader();
 				      fr.onload = receivedText;
 				      //fr.readAsText(file);
-				      fr.readAsDataURL(file);
+				      fr.readAsText(file);
 	   			 }
 				}
 		)
