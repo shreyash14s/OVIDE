@@ -1,0 +1,57 @@
+@font-face {
+	font-family: myRaleway;
+	src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: myAnonymous;
+	src: url("../fonts/Anonymous.ttf") format("truetype");
+}
+html, body, .container-fluid {
+	height:100%;
+}
+#header {
+	text-align: center;
+}
+#content {
+	height: 90%;
+}
+#side-panel {
+	background-color: ivory;
+	border: 1px solid black;
+	height: 100%;
+}
+#main {
+	height: 100%;
+}
+#editor {
+	border: 1px solid black;
+	height: 60%;
+}
+#text {
+	resize: none;
+	height: 100%;
+	width: 100%;
+	font-size: 14pt;
+	background-color: #424242;
+	color: white;
+	font-family: myAnonymous;
+
+	-moz-tab-size : 4;
+	-o-tab-size : 4;
+	tab-size : 4;
+}
+#terminal {
+	border: 1px solid black;
+	margin-top: 1%;
+	height: 38.1%;
+}
+#output {
+	resize: none;
+	height: 100%;
+	width: 100%;
+	font-size: 16pt;
+	font-weight: 300;
+	background-color: #689F38;
+	color: white;
+	font-family: "Courier New";
+}

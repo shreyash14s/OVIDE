@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OVIDE Code Editor</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/editor.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/jquery-3.1.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/editor.js') }}"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="header" class="col-md-12">
+			<h2>OVIDE - Online Virtual IDE</h2>
+		</div>
+		<div id="content" class="row">
+			<div id="side-panel" class="col-md-3 resizable" >
+				This is side panel. See directory structure here.
+			</div>
+			<div id="main" class="col-md-9 resizable">
+				<div id="editor">
+					<div>
+						<button class="btn" id="compile">Compile</button>
+						<button class="btn" id="run">Run</button>
+						<span class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="langbtn">Choose Language
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu" id="langsch">
+								<li><a href="#">C</a></li>
+								<li><a href="#">Java</a></li>
+								<li><a href="#">Python</a></li>
+							</ul>
+						</span>
+						<label class="btn btn-primary btn-file">
+						Upload <input id="fileUpload" type="file" name="file" style="display:none" >
+						</label>
+					</div>
+					<textarea id="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+				</div>
+				<div id="terminal">
+					<textarea id="output" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
