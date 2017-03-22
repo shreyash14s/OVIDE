@@ -47,8 +47,10 @@
 })(jQuery);
 
 function receivedText() {
-    document.getElementById('text').value = fr.result;
-  } 
+	document.getElementById('text').value = fr.result;
+}
+
+var cmdSelectionStart = 2;
 
 $(function() {
 	$("textarea").allowTabChar();
@@ -60,35 +62,39 @@ $(function() {
 	jcomp.bind("click", compileIt);
 	jrun.bind("click", runIt);
 
+	joutput.text("$ ");
+	// joutput.change(function () {
+	// 	joutput.scrollTop(joutput.prop("scrollHeight"));
+	// })
+	// joutput.on('keyup', function (event) {
+	// 	var len = joutput.text().length;
+	// 	// if (len < cmdSelectionStart) {
+	// 	// 	event.preventDefault();
+	// 	// 	event.stopPropagation();
+	// 	// }
+	// });
 
 	$("#langsch li a").click(function () {
 		$("#langbtn").html($(this).text() + "  <span class=\"caret\"></span>");
 		$("#langbtn").val($(this).text()  + "  <span class=\"caret\"></span>");
 	})
 	
-	$("#fileUpload").change(
-				function()
-				{
-					input = document.getElementById('fileUpload');
-					if (!input) {
-     				 alert("Um, couldn't find the fileinput element.");
-    				}
-					 else if (!input.files) {
+	$("#fileUpload").change(function() {
+				input = document.getElementById('fileUpload');
+				if (!input) {
+     				alert("Um, couldn't find the fileinput element.");
+    			} else if (!input.files) {
      				 alert("This browser doesn't seem to support the `files` property of file inputs.");
-    			}
-    			else if (!input.files[0]) {
+    			} else if (!input.files[0]) {
       				alert("Please select a file before clicking 'Load'");               
-    			}
-    			  else 
-    			  {
+    			} else {
 				      file = input.files[0];
 				      fr = new FileReader();
 				      fr.onload = receivedText;
 				      //fr.readAsText(file);
 				      fr.readAsText(file);
-	   			 }
-				}
-		)
+   			 	}
+			});
 
 	
 });
@@ -109,7 +115,9 @@ function compileIt() {
 
 function compileComplete(data) {
 	//alert(	)
-	alert(JSON.stringify(data))
+	console.log(JSON.stringify(data))
+	joutput.text(joutput.text() + data.cmd + "\n" + data.error + data.out + "$ ");
+	joutput.scrollTop(joutput.prop("scrollHeight"));
 }
 
 function failedToSend(data) {
@@ -130,5 +138,8 @@ function runIt() {
 }
 
 function runComplete(data) {
-	alert(JSON.stringify(data))
+	// alert(JSON.stringify(data))
+	console.log(JSON.stringify(data))
+	joutput.text(joutput.text() + data.cmd + "\n" + data.error + data.out + "$ ");
+	joutput.scrollTop(joutput.prop("scrollHeight"));
 }
