@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+  <atom:link href="file:///D:/SSR%20Stuff/MyDownloads/startbootstrap-agency-gh-pages%20(copy)/rss.xml" rel="self" type="application/rss+xml"/>
+  <title>OVIDE</title>
+  <link>http://localhost:5000</link>
+  <description>Online Virtual IDE</description>
+  <language>en-us</language>
+  <lastBuildDate>Tue, 11 Apr 2017 10:18:42 -0400</lastBuildDate>
+  <item>
+    <title>C language added</title>
+    <link>http://localhost:5000/editor?lang=c</link>
+    <description>C language added to IDE</description>
+  </item>
+  <item>
+    <title>Python language added</title>
+    <link>http://localhost:5000/editor?lang=py</link>
+    <description>Python language added to IDE</description>
+  </item>
+  <item>
+    <title>Java language added</title>
+    <link>http://localhost:5000/editor?lang=java</link>
+    <description>Java language added to IDE</description>
+  </item>
+</channel>
+
+</rss>

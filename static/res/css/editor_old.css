@@ -55,8 +55,3 @@ html, body, .container-fluid {
 	color: white;
 	font-family: "Courier New";
 }
-#save {
-	display: none;
-	font-weight: bold;
-	font-size: 1.4em;
-}

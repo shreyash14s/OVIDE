@@ -1,0 +1,6 @@
+__pycache__
+*.log
+temp.c
+temp.java
+temp.py
+temp.class

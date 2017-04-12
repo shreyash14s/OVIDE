@@ -3,10 +3,13 @@
 <head>
 	<title>OVIDE Code Editor</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/ui.easytree.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/editor.css') }}">
 	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/jquery-3.1.1.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/editor.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/jquery.easytree.js') }}"></script>
+	<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script> -->
 </head>
 <body>
 	<div class="container-fluid">
@@ -14,8 +17,30 @@
 			<h2>OVIDE - Online Virtual IDE</h2>
 		</div>
 		<div id="content" class="row">
-			<div id="side-panel" class="col-md-3 resizable" >
-				This is side panel. See directory structure here.
+			<div id="side-panel" class="col-md-3 resizable ui-easytree easytree-container easytree-focused">
+				<ul>
+					<li class="isFolder isExpanded" title="Bookmarks">
+						C 
+						<ul>
+							<li onClick="tutor(event)">tutorial1.c</li>
+							<li onClick="tutor(event)">tutorial2.c</li>
+						</ul>
+					</li>
+					<li class="isFolder isExpanded" title="Bookmarks">
+						Java 
+						<ul>
+							<li onClick="tutor(event)">tutorial1.java</li>
+							<li onClick="tutor(event)">tutorial2.java</li>
+						</ul>
+					</li>
+					<li class="isFolder isExpanded" title="Bookmarks">
+						Python 
+						<ul>
+							<li onClick="tutor(event)">tutorial1.py</li>
+							<li onClick="tutor(event)">tutorial2.py</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 			<div id="main" class="col-md-9 resizable">
 				<div id="editor">
@@ -34,6 +59,7 @@
 						<label class="btn btn-primary btn-file">
 						Upload <input id="fileUpload" type="file" name="file" style="display:none" >
 						</label>
+						<span id="save">Saved</span>
 					</div>
 					<textarea id="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
 				</div>
@@ -44,8 +70,14 @@
 			
 		</div>
 	</div>
-	<script type="text/javascript">
-		
-	</script>
+	<!-- <script type="text/javascript" charset="utf-8">
+		var socket = io.connect('http://' + document.domain + ':' + location.port);
+		socket.on('connect', function() {
+			socket.emit('my event', {data: 'I\'m connected!'});
+		});
+		socket.on('disconnect', function() {
+			alert("Connection lost! Should try again.");
+		});
+	</script> -->
 </body>
 </html>
