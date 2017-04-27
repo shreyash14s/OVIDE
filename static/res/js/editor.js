@@ -83,7 +83,7 @@ $(function() {
 		langbtn.html($(this).text() + "  <span class=\"caret\"></span>");
 		langbtn.val($(this).text()  + "  <span class=\"caret\"></span>");
 	})
-	
+
 	$("#fileUpload").change(function() {
 			input = document.getElementById('fileUpload');
 			if (!input) {
@@ -91,7 +91,7 @@ $(function() {
 			} else if (!input.files) {
 				alert("This browser doesn't seem to support the `files` property of file inputs.");
 			} else if (!input.files[0]) {
-				alert("Please select a file before clicking 'Load'");               
+				alert("Please select a file before clicking 'Load'");
 			} else {
 				file = input.files[0];
 				fr = new FileReader();
@@ -112,7 +112,7 @@ $(function() {
 function compileIt() {
 	console.log("woeifoinr");
 	$.ajax({
-		url: "http://localhost:5000/compile",
+		url: "/compile",
 		type: "POST",
 		data: {
 			code: jtext.val(),
@@ -161,7 +161,7 @@ function runIt() {
 		cmd = "java temp";
 	else if (langbtn.val().startsWith("Python"))
 		cmd = "python3 temp.py";
-	else 
+	else
 		cmd = "";
 	joutput.text(joutput.text() + cmd + "\n");
 	joutput.scrollTop(joutput.prop("scrollHeight"));
@@ -188,7 +188,7 @@ function runComplete(data) {
 function tutor(event) {
 	var name = event.target.innerHTML;
 	$.ajax({
-		url: "http://localhost:5000/getCode",
+		url: "/getCode",
 		type: "POST",
 		data: {
 			filename: 'tutorial/' + name
@@ -206,7 +206,7 @@ function loadCode(data) {
 
 function autosave() {
 	$.ajax({
-		url: "http://localhost:5000/autosave",
+		url: "/autosave",
 		type: "POST",
 		data: {
 			code: jtext.val()
