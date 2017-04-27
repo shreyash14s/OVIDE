@@ -92,4 +92,5 @@ def getCode():
 
 if __name__== '__main__':
 	# app.run(debug=True)
-	app.run(debug=True, threaded=True)
+	port = int(os.getenv("PORT"))
+	app.run(threaded=True, port=port)
