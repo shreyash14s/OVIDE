@@ -1,0 +1,7 @@
+{
+  "name": "OVIDE",
+  "description": "An Online Virtual IDE",
+  "image": "heroku/python",
+  "repository": "https://github.com/shreyash14s/OVIDE",
+  "keywords": [ "python", "flask" ]
+}
