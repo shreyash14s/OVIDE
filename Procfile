@@ -1,1 +1,1 @@
-web: python3 compile.py
+web: gunicorn compile:app
