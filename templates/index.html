@@ -204,7 +204,7 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading">About</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+					<h3 class="section-subheading text-muted">This is our timeline.</h3>
 				</div>
 			</div>
 			<div class="row">
@@ -390,17 +390,15 @@
 							<div class="modal-body">
 								<!-- Project Details Go Here -->
 								<h2>C</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+								<p class="item-intro text-muted">General-purpose efficient language.</p>
 								<img class="img-responsive img-centered" a_src="{{ url_for('static', filename = 'res/img/logos/C.jpg') }}" alt="">
-								<p>Write something about C.</p>
 								<p>
-									<strong>Don't want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+									C is a general-purpose, imperative computer programming language, supporting structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. By design, C provides constructs that map efficiently to typical machine instructions, and therefore it has found lasting use in applications that had formerly been coded in assembly language, including operating systems, as well as various application software for computers ranging from supercomputers to embedded systems.</p>
 								<ul class="list-inline">
-									<li>Date: July 2014</li>
-									<li>Client: Round Icons</li>
-									<li>Category: Graphic Design</li>
+									<li>Date: 1972</li>
+									<li>Paradigm: Procedural</li>
 								</ul>
-								<a type="button" class="btn btn-primary" href="/learn/c" target="_blank"> Learn more</a>
+								<!-- <a type="button" class="btn btn-primary" href="/learn/c" target="_blank"> Learn more</a> -->
 								<a type="button" class="btn btn-primary" href="/editor" target="_blank"> Start coding</a>
 							</div>
 						</div>
@@ -424,11 +422,14 @@
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body">
-								<h2>Project Heading</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+								<h2>Java</h2>
+								<p class="item-intro text-muted">Robust platform-independent language.</p>
 								<img class="img-responsive img-centered" a_src="{{ url_for('static', filename = 'res/img/logos/Java.jpg') }}" alt="">
-								<p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-								<p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+								<p>Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture.</p>
+								<ul class="list-inline">
+									<li>Date: 1995</li>
+									<li>Paradigm: Object Oriented</li>
+								</ul>
 								<a type="button" class="btn btn-primary" href="/editor" target="_blank"> Start coding</a>
 							</div>
 						</div>
@@ -452,13 +453,11 @@
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body">
-								<!-- Project Details Go Here -->
-								<h2>Project Name</h2>
-								<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+								<h2>Python</h2>
+								<p class="item-intro text-muted">High level simple language.</p>
 								<img class="img-responsive img-centered" a_src="{{ url_for('static', filename = 'res/img/logos/Python.jpg') }}" alt="">
-								<p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-								<p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-								<a type="button" class="btn btn-primary" href="/editor" target="_blank"> Start coding</a>
+								<p>Python is a widely used high-level programming language for general-purpose programming, created by Guido van Rossum. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. The language provides constructs intended to enable writing clear programs on both a small and large scale.</p>
+								<a type="button" class="btn btn-primary" href="/editor/python" target="_blank"> Start coding</a>
 							</div>
 						</div>
 					</div>
@@ -489,7 +488,7 @@
 			//  src="{{ url_for('static', filename = 'res/video/ovide_intro.mp4') }}"
 			// console.log('awotfn', "{{ url_for('static', filename = 'res/video/ovide_intro.mp4') }}");
 			$('#vidsource').attr('src', "{{ url_for('static', filename = 'res/video/ovide_intro.mp4') }}")
-		}, 8000);
+		}, 750);
 
 		setTimeout(function () {
 			//  src="{{ url_for('static', filename = 'res/video/ovide_intro.mp4') }}"
@@ -497,7 +496,7 @@
 			for (var i = jimp.length - 1; i >= 0; i--) {
 				$(jimp[i]).attr('src', $(jimp[i]).attr('a_src'));
 			}
-		}, 4000);
+		}, 500);
 	</script>
 
 </body>

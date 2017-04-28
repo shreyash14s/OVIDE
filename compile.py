@@ -12,8 +12,11 @@ def home():
 	return render_template('index.html')
 
 @app.route('/editor')
+@app.route('/editor/c')
+@app.route('/editor/python')
+@app.route('/editor/java')
 def editor():
-	return render_template('editor.html')
+	return render_template('editor2.html')
 
 @app.route('/learn/<string:lang>')
 def learn(lang='c'):
@@ -90,7 +93,16 @@ def getCode():
 	f.close()
 	return s
 
+@app.route('/tree', methods=['POST', 'GET'])
+# @app.route('/tree/*', methods=['POST', 'GET'])
+def getTree():
+	return render_template('tree.html')
+
+@app.route('/tree/<string:lang>', methods=['POST', 'GET'])
+def getLangTree(lang):
+	return render_template(lang+'tree.html')
+
 if __name__== '__main__':
-	# app.run(debug=True)
-	port = int(os.getenv("PORT"))
-	app.run(threaded=True, port=port)
+	app.run(debug=True, port=8000)
+	# port = int(os.getenv("PORT"))
+	# app.run(threaded=True, port=port)

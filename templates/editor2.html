@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Online Virtual IDE</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="{{ url_for('static', filename = 'res/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link href="{{ url_for('static', filename = 'res/vendor/font-awesome/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename = 'res/css/Montserrat.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename = 'res/css/Kaushan.css') }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename = 'res/css/Droid.css') }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename = 'res/css/fontello.css') }}" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel='stylesheet' type='text/css'>
+
+	<!-- Theme CSS -->
+	<link href="{{ url_for('static', filename = 'res/css/agency.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/ui.easytree.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'res/css/editor2.css') }}">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+	<![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+	<div id="wrapper">
+	<!-- Navigation -->
+	<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">Online Virtual IDE</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="hidden">
+						<a href="#page-top"></a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<!-- Header -->
+	<header id="header">
+		<div class="container-fluid">
+			<div id="side-panel" class="col-md-3 resizable ui-easytree easytree-container easytree-focused">
+			</div>
+			<div id="main" class="col-md-9 resizable">
+				<div id="editor">
+					<div id="controls">
+						<button class="btn btn-primary" id="compile">Compile</button>
+						<button class="btn btn-primary" id="run">Run</button>
+						<span class="dropdown">
+							<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" id="langbtn">Choose Language
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu" id="langsch">
+								<li><a href="#" id="clang">C</a></li>
+								<li><a href="#" id="javalang">Java</a></li>
+								<li><a href="#" id="pylang">Python</a></li>
+							</ul>
+						</span>
+						<label class="btn btn-info btn-file">
+						Upload <input id="fileUpload" type="file" name="file" style="display:none" >
+						</label>
+						<span id="save">Saved</span>
+					</div>
+					<div id="textcon">
+						<textarea id="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+					</div>
+				</div>
+				<div id="terminal">
+					<textarea id="output" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" disabled></textarea>
+				</div>
+			</div>
+		</div>
+	</header>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{{ url_for('static', filename = 'res/vendor/jquery/jquery.min.js') }}"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="{{ url_for('static', filename = 'res/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="{{ url_for('static', filename = 'res/js/jquery.easing.min.js') }}"></script>
+
+	<!-- Contact Form JavaScript -->
+	<script src="{{ url_for('static', filename = 'res/js/jqBootstrapValidation.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'res/js/contact_me.js') }}"></script>
+
+	<!-- Theme JavaScript -->
+	<!-- <script src="{{ url_for('static', filename = 'res/js/agency.js') }}"></script> -->
+	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/jquery.easytree.js') }}"></script>
+	<!-- <script type="text/javascript" src="{{ url_for('static', filename = 'res/js/jquery.autogrow.js') }}"></script> -->
+	<script type="text/javascript" src="{{ url_for('static', filename = 'res/js/editor2.js') }}"></script>
+
+</body>
+
+</html>

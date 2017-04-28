@@ -1,0 +1,128 @@
+@font-face {
+	font-family: myRaleway;
+	src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: myAnonymous;
+	src: url("../fonts/Anonymous.ttf") format("truetype");
+}
+html {
+	height: 100%;
+	margin: 0px;
+}
+body, .container, .container-fluid {
+	height: 100%;
+	/*overflow-y: hidden;*/
+	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#wrapper:before {
+    content:'';
+    float: left;
+    height: 100%;
+}
+#wrapper {
+    height: 100%;
+    /*background-color: black;*/
+    /*color: white;*/
+}
+#header {
+	height: 100%;
+	padding-top: 80px;
+	/*margin-top: 90px;*/
+	/*margin-bottom: 90px;*/
+	text-align: center;
+}
+#header:after {
+    content:'';
+    display: block;
+    clear: both;
+}
+#content {
+	/*height: 90%;*/
+}
+#side-panel {
+	/*padding: 10px;*/
+	text-align: left;
+	text-align: -webkit-left;
+	background-color: ivory;
+	border: 1px solid black;
+	height: 100%;
+}
+/*#main:before {
+    content:'';
+    float: left;
+    height: 100%;
+}*/
+#main {
+	height: 100%;
+}
+#editor {
+	border: 1px solid black;
+	height: 60%;
+	margin: 0px;
+}
+#textcon {
+	/*margin: 0px;*/
+	/*width: 50%;*/
+	height: 100%;
+    margin: 0px auto;
+    /*padding: 5px;*/ /*workaround for textarea margin*/
+}
+#text {
+	text-align: left;
+	text-align: -webkit-left;
+	/*resize: none;*/
+	/*padding: 3px;*/
+	/*margin-top: 0px;*/
+	/*margin-bottom: 0px;*/
+	height: 100%;
+    width: 100%;
+    /*-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */*/
+	font-size: 14pt;
+	background-color: #424242;
+	color: white;
+	font-family: myAnonymous;
+	/*overflow-y: scroll;*/
+
+	-moz-tab-size : 4;
+	-o-tab-size : 4;
+	tab-size : 4;
+}
+#terminal {
+	border: 1px solid black;
+	margin-top: 1%;
+	height: 38.1%;
+}
+#output {
+	resize: none;
+	height: 100%;
+	width: 100%;
+	font-size: 16pt;
+	font-weight: 300;
+	background-color: #689F38;
+	color: white;
+	font-family: "Courier New";
+}
+/*#terminal:after {
+    content:'';
+    display: block;
+    clear: both;
+}*/
+#save {
+	display: none;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+#controls {
+	text-align: left;
+	text-align: -webkit-left;
+	padding: 10px;
+}
+.easytree-container {
+	border: none;
+}
+.navbar-custom .navbar-brand {
+  background-color: rgba(0,0,0,0);
+}
