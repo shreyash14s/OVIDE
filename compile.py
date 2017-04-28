@@ -31,6 +31,8 @@ def save():
 
 def streamify(stream):
 	for i in stream:
+		i['data'] = i['data'].replace("\r\n", "\n").replace("\n", "\r")
+		print(i)
 		yield "data:" + json.dumps(i) + "\n\n"
 	yield 'data:{"end": true}\n\n'
 

@@ -60,6 +60,7 @@ $(function() {
 	jedit = $("#editor");
 	joutput = $("#output");
 	jtext = $("#text");
+	jtext.height(jtext.parent().height());
 	// jtext.autogrow();
 	// autosize(jtext);
 	// $(jtext).height(jedit.height()).width(jedit.width());
@@ -138,7 +139,7 @@ function compileIt() {
 		// error: failedToSend
 	}).done(function (d) {
 		console.log('aehfeiurb');
-		joutput.text(joutput.text() + d + "\n");
+		joutput.text(joutput.text() + d.replace("\r", "\n") + "\n");
 		joutput.scrollTop(joutput.prop("scrollHeight"));
 		var ev = new EventSource('/stream');
 		ev.addEventListener('message', function (event) {
