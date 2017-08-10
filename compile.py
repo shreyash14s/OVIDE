@@ -1,8 +1,6 @@
-from flask import Flask, redirect, url_for, request, render_template, Response
-import os
-import sys
 import json
 import execr
+from flask import Flask, redirect, render_template, Response
 
 app = Flask(__name__)
 app.config["CACHE_TYPE"] = "null"
@@ -20,9 +18,9 @@ def editor():
 
 @app.route('/learn/<string:lang>')
 def learn(lang='c'):
-	return render_template('learn-'+lang+'.html')
+	return render_template('learn-' + lang + '.html')
 
-@app.route('/autosave',methods = ['POST', 'GET'])
+@app.route('/autosave', methods=['POST', 'GET'])
 def save():
 	f = open('temp.c', 'w')
 	f.write(request.form['code'])
@@ -47,20 +45,20 @@ def save_file():
 		f.write(request.form['code'])
 		f.close()
 	elif 'Java' in lang:
-		javacode =  request.form['code']
+		javacode = request.form['code']
 		classname = javacode.split(' ')[2]
-		str = javacode.replace(classname,'temp')
-		f = open('temp.java','w')
-		f.write(str)
+		temp_class_code = javacode.replace(classname, 'temp')
+		f = open('temp.java', 'w')
+		f.write(temp_class_code)
 		f.close()
 		cmd = "javac temp.java"
 		runcmd = "java temp"
 	elif 'Python' in lang:
-		f = open('temp.py','w')
+		f = open('temp.py', 'w')
 		f.write(request.form['code'])
 		f.close()
 		cmd = "python3 -m py_compile temp.py"
-		runcmd =  "python temp.py"
+		runcmd = "python3 temp.py"
 	else:
 		return Response("Error: Cannot compile")
 	return Response(cmd, mimetype="text/plain")
@@ -88,7 +86,7 @@ def stream_run_output():
 	resp.headers['Access-Control-Allow-Origin'] = '*'
 	return resp
 
-@app.route('/getCode',methods = ['POST', 'GET'])
+@app.route('/getCode', methods=['POST', 'GET'])
 def getCode():
 	f = open(str(request.form['filename']))
 	s = f.read()
@@ -102,9 +100,9 @@ def getTree():
 
 @app.route('/tree/<string:lang>', methods=['POST', 'GET'])
 def getLangTree(lang):
-	return render_template(lang+'tree.html')
+	return render_template(lang + 'tree.html')
 
-if __name__== '__main__':
-	app.run(debug=True, port=8000)
+if __name__ == '__main__':
+	app.run(debug=True, host='0.0.0.0', port=8000)
 	# port = int(os.getenv("PORT"))
 	# app.run(threaded=True, port=port)
