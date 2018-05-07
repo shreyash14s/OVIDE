@@ -9,7 +9,14 @@ Our Online Virtual IDE [OVIDE](http://ovide.herokuapp.com/)  was made as part of
  # Update
  We're hosting now!! Click [here](http://ovide.herokuapp.com/) to go through our project.
 
- 
+# Update 2
+
+To run our project locally without fussing about installing any compilers, software and other dependencies, please download our **Docker Image** and run it using a container.
+
+Docker Hub URL:- [Docker Hub](https://hub.docker.com/r/siddharths2710/ovide/)
+
+Docker Store URL:- [Docker Store](https://store.docker.com/community/images/siddharths2710/ovide)
+
 ## Contributors
 
 - [Shreyas S Rao](https://github.com/s-s-rao)
